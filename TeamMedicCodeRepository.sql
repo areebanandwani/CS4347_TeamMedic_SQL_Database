@@ -89,8 +89,8 @@ FROM HealthProfessionals;
 -- @block
 CREATE TABLE Services(
     SKey INT NOT NULL AUTO_INCREMENT,
-    Date Date,
-    Time Time,
+    DateOfService Date, /* Changed from date → DateOfService */
+    TimeOfService Time, /* changed from time → TimeOfService */
     PRIMARY KEY (SKey)
 )
 
@@ -309,7 +309,7 @@ join institution on institution.IKey = consistof.InstitutionKey;
 /* This query can be condensed by using alias */
 
 
-/* This creates the M:N table 'ConsistOf' */
+/* This creates the M:N table 'LookUp' */
 -- @block
 CREATE table LookUp (
     PatientKey int not NULL,
@@ -341,7 +341,7 @@ join services on services.SKey = lookup.ServicesKey;
 
 
 
-/* This creates the M:N table 'ConsistOf' */
+/* This creates the M:N table 'Provides' */
 -- @block
 CREATE table Provides (
     instititutionkey int not NULL,
