@@ -435,7 +435,7 @@ From PR_Allergies
 join patient on patient.Pkey = PR_Allergies.Pkey;
 
 
-
+/* This creates the Specialization Table 'Doctor' */
 -- @block
 CREATE TABLE Doctor(
  HPKey INT NOT NULL AUTO_INCREMENT,
@@ -443,7 +443,6 @@ CREATE TABLE Doctor(
  Physician Boolean,
  PRIMARY Key (HPKey),
  FOREIGN Key (HPKey) References Health Professionals (HPKey)
-
 );
 
 
@@ -466,3 +465,405 @@ Select healthprofessionals.Fname, healthprofessionals.Lname, doctor.Physician, d
 From doctor
 join healthprofessionals on healthprofessionals.HPKey = doctor.HPKey;
 
+
+
+/* This creates the Specialization Table 'Nurse' */
+-- @block
+CREATE TABLE Nurse( 
+    HPKey INT NOT NULL AUTO_INCREMENT, 
+    NursePractitioner Boolean, /* changed from varchar (50) to Boolean */
+    CriticalCare Boolean, /* new type of nurse */
+    Onocology Boolean, /* new type of nurse */
+    PRIMARY Key (HPKey), 
+    FOREIGN Key (HPKey) References HealthProfessionals (HPKey) 
+); 
+
+
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO Nurse(NursePractitioner, CriticalCare, Onocology) 
+VALUES( 
+    '1', '0', '0'
+); 
+
+ 
+
+/* This returns a query */ 
+-- @block 
+SELECT *  
+FROM Nurse; 
+
+/* This returns a query */
+-- @block
+Select *
+From Nurse
+join healthprofessionals on healthprofessionals.HPKey = Nurse.HPKey;
+
+  
+/* This creates the Specialization Table 'Pharmacist' */
+-- @block
+CREATE TABLE Pharmacist( 
+    HPKey INT NOT NULL AUTO_INCREMENT, 
+    Clinical Boolean, /* changed from varchar (50) to Boolean */
+    Retail Boolean, /* changed from varchar (50) to Boolean */
+    PRIMARY Key (HPKey), 
+    FOREIGN Key (HPKey) References HealthProfessionals (HPKey) 
+); 
+
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO Pharmacist(Clinical, Retail) 
+VALUES( 
+    '0', '1'
+); 
+
+/* This returns a query */ 
+-- @block 
+SELECT *  
+FROM pharmacist; 
+
+/* This returns a query */
+-- @block
+Select *
+From pharmacist
+join healthprofessionals on healthprofessionals.HPKey = pharmacist.HPKey;
+
+
+
+/* This creates the Multi-Valued Attributes Table 'HP_Titles' */
+-- @block
+CREATE TABLE HP_Titles(
+    HPKey INT NOT NULL, 
+    HPtitles VARCHAR (80) NOT NULL, 
+    PRIMARY Key (HPKey, HPtitles)
+); 
+
+ 
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO HP_Titles(HPKey, HPtitles) 
+VALUES( 
+    '1', 
+    'MD' 
+); 
+
+ 
+/* This returns a query */ 
+-- @block 
+SELECT *  
+FROM HP_Titles; 
+
+
+/* This returns a query */
+-- @block
+Select *
+From hp_titles
+join healthprofessionals on healthprofessionals.HPKey = hp_titles.HPKey;
+
+
+/* This creates the Specialization Table 'Hospital' */
+-- @block
+CREATE TABLE Hospital( 
+    IKey INT NOT NULL AUTO_INCREMENT, 
+    InOutPatient Boolean,  /* i also kinda wanna delete this one, changed In-patient & Outpatient to InOutPatient && changed from varchar (50) to Boolean */ 
+    ICU Boolean, /* changed from varchar (50) to Boolean */
+    Labs Boolean, /* changed from varchar (50) to Boolean */
+    EmergencyRoom Boolean, 
+    PRIMARY Key (IKey), 
+    FOREIGN Key (IKey) References Institution (Ikey) 
+); 
+
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO Hospital(InOutPatient, ICU, Labs, EmergencyRoom) 
+VALUES( 
+    '1', '0', '0', '1'
+); 
+
+
+/* This returns a query */ 
+-- @block 
+SELECT *  
+FROM Hospital; 
+
+
+/* This returns a query */
+-- @block
+Select *
+From hospital
+join institution on institution.IKey = hospital.IKey;
+
+ /* This creates the Specialization Table 'Clinic' */
+-- @block
+CREATE TABLE Clinic( 
+    IKey INT NOT NULL AUTO_INCREMENT, 
+    Labs Boolean, /* changed from varchar (50) to Boolean */
+    UrgentCare Boolean, /* changed from varchar (50) to Boolean */
+    PRIMARY Key (IKey), 
+    FOREIGN Key (IKey) References Institution (Ikey) 
+
+); 
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO Clinic(Labs, UrgentCare) 
+VALUES( 
+    '1', '0'
+); 
+
+
+/* This returns a query */ 
+-- @block 
+SELECT *  
+FROM Clinic; 
+
+
+
+/* This returns a query */
+-- @block
+Select *
+From Clinic
+join institution on institution.IKey = Clinic.IKey;
+ 
+
+
+
+ /* This creates the Specialization Table 'Clinic' */
+ -- @block
+CREATE TABLE Pharmacy( 
+    IKey INT NOT NULL AUTO_INCREMENT, 
+    PrescribedMedication VARCHAR (80), 
+    OvertheCounterMedication VARCHAR (80), 
+    PRIMARY Key (IKey), 
+    FOREIGN Key (IKey) References Institution (Ikey) 
+); 
+
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO Pharmacy(PrescribedMedication, OvertheCounterMedication) 
+VALUES( 
+    'Tretinoin', 
+    'Tylenol' 
+
+); 
+
+
+/* This returns a query */ 
+-- @block 
+SELECT *  
+FROM pharmacy; 
+
+
+/* This returns a query */
+-- @block
+Select *
+From visit
+join institution on institution.IKey = visit.InstitutionKey
+join patient on Patient.Pkey = Institution.IKey;
+
+
+
+
+ /* This creates the Specialization Table 'Consultation' */
+-- @block 
+CREATE TABLE Consultation( 
+    SKey INT NOT NULL AUTO_INCREMENT, 
+    InstructionforMedication VARCHAR(80), 
+    PrescribedMedications VARCHAR(80), 
+    PRIMARY Key (SKey), 
+    FOREIGN Key (SKey) References Services (SKey) 
+); 
+
+
+/*These are just one time use to populate an example of a tuple */ 
+
+-- @block  
+INSERT INTO Consultation (InstructionforMedication, PrescribedMedications) 
+VALUES ( 
+    'Take with food', 
+    'Amoxicillin' 
+
+); 
+
+/* This returns a query */ 
+-- @block 
+SELECT *  
+FROM Consultation; 
+
+
+ /* This creates the Specialization Table 'Prescription' */
+ -- @block 
+CREATE TABLE Prescription( 
+    SKey INT NOT NULL AUTO_INCREMENT, 
+    RxNumber VARCHAR(20), 
+    NameOfPrescription VARCHAR(50), /* changed from name to name of prescription */
+    Quantity INT , 
+    Duration VARCHAR(50), 
+    PRIMARY Key (SKey), 
+    FOREIGN Key (SKey) References Services (SKey) 
+); 
+
+
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO Prescription (RXNumber, NameOfPrescription, Quantity, Duration) 
+VALUES ( 
+    'SH10098', 
+    'Amoxicillin', 
+    '2', 
+    '5 Days'
+); 
+
+-- @block
+SELECT *
+From prescription;
+
+
+
+ /* This creates the Specialization Table 'Prescription' */
+ -- @block
+CREATE TABLE Vaccination( 
+    SKey INT NOT NULL AUTO_INCREMENT, 
+    Covid Boolean, 
+    Tuberculosis Boolean, 
+    Shingrix Boolean, 
+    Pneumococcal Boolean, 
+    Flu Boolean, 
+    PRIMARY Key (SKey), 
+    FOREIGN Key (SKey) References Services (SKey) 
+); 
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) 
+VALUES ( 
+
+    '1','0','0','0','0' 
+
+); 
+
+-- @block
+SELECT *
+FROM vaccination;
+
+
+/* This returns a query */
+-- @block
+Select *
+From vaccination
+join services on services.SKey = vaccination.SKey;
+
+
+-- @block
+select *
+FROM lookup
+JOIN services on services.SKey = lookup.ServicesKey;
+
+
+ /* This creates the Specialization Table 'Insurance' */
+ -- @block
+CREATE TABLE Insurance( 
+    PayKey INT NOT NULL AUTO_INCREMENT, 
+    PhoneNumber VARCHAR(80), 
+    InsuranceType VARCHAR(80), 
+    NameOfInsurance VARCHAR(80), /* changef from name to NameOfInsurance */
+    AmountOff decimal(4,2),  /* changed from float to Decimal (4,2) */
+    PRIMARY Key (PayKey), 
+    FOREIGN Key (PayKey) References Payment (PayKey) 
+); 
+
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO Insurance (PhoneNumber, InsuranceType, NameOfInsurance, AmountOff) 
+VALUES ( 
+    '439-000-5678', 
+    'PPO', 
+    'Blue Cross Blue Shield',
+    '20.00' 
+); 
+
+-- @block
+SELECT *
+FROM insurance;
+
+
+
+ /* This creates the Specialization Table 'RxCoupons' */
+ -- @block
+CREATE TABLE RxCoupons( 
+    PayKey INT NOT NULL AUTO_INCREMENT, 
+    Validity Boolean, /* this was changed from varchar to Boolean */
+    AmountOff decimal(4,2),  /* changed from float to dedimal (4,2) */
+    PRIMARY Key (PayKey), 
+    FOREIGN Key (PayKey) References Payment (PayKey) 
+
+); 
+
+ 
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO RxCoupons (Validity, AmountOff) 
+VALUES ( 
+    '1',  
+    '20.00' 
+
+); 
+
+-- @block
+SELECT *
+FROM rxcoupons;
+
+/* This creates the Specialization Table 'SelfPay' */
+ -- @block
+CREATE TABLE SelfPay( /* will have to change name of Table to SelfPay */ 
+    PayKey INT NOT NULL AUTO_INCREMENT, 
+    AmountToPay decimal(6,2), 
+    PaymentMethod VARCHAR(80) ,
+    PRIMARY Key (PayKey), 
+    FOREIGN Key (PayKey) References Payment (PayKey) 
+); 
+
+ 
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block
+INSERT INTO SelfPay (AmountToPay, PaymentMethod) 
+VALUES ( 
+    '209.5', 
+     'Cash' 
+  ); 
+
+
+
+/* This creates the Multi-Valued Attributes table 'SP_PayMethod' */
+-- @block
+CREATE TABLE SP_PayMethod( 
+    PayKey INT NOT NULL AUTO_INCREMENT, 
+    SPpaymethod VARCHAR(80), 
+    PaymentMethod VARCHAR(80), 
+    PRIMARY Key (PayKey,SPpaymethod)
+); 
+
+
+/*These are just one time use to populate an example of a tuple */ 
+-- @block  
+INSERT INTO SP_PayMethod(PayKey, SPpaymethod) 
+VALUES ( 
+    '1', 
+     'Credit Card' 
+  ); 
+
+
+/* This returns a query */ 
+-- @block 
+SELECT *  
+FROM SP_PayMethod; 
+ 
