@@ -128,7 +128,7 @@ CREATE TABLE Nurse(
     HPKey INT NOT NULL AUTO_INCREMENT, 
     NursePractitioner BOOLEAN, 
     CriticalCare BOOLEAN, 
-    Onocology BOOLEAN, 
+    Oncology BOOLEAN, 
     PRIMARY Key (HPKey), 
     FOREIGN Key (HPKey) References HealthProfessionals (HPKey) 
 ); 
