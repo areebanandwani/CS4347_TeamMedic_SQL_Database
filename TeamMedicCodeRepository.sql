@@ -473,7 +473,7 @@ CREATE TABLE Nurse(
     HPKey INT NOT NULL AUTO_INCREMENT, 
     NursePractitioner Boolean, /* changed from varchar (50) to Boolean */
     CriticalCare Boolean, /* new type of nurse */
-    Onocology Boolean, /* new type of nurse */
+    Oncology Boolean, /* new type of nurse */
     PRIMARY Key (HPKey), 
     FOREIGN Key (HPKey) References HealthProfessionals (HPKey) 
 ); 
@@ -845,7 +845,7 @@ VALUES (
 
 /* This creates the Multi-Valued Attributes table 'SP_PayMethod' */
 -- @block
-CREATE TABLE SP_PayMethod( 
+CREATE TABLE SP_PayMethod
     PayKey INT NOT NULL AUTO_INCREMENT, 
     SPpaymethod VARCHAR(80), 
     PaymentMethod VARCHAR(80), 
