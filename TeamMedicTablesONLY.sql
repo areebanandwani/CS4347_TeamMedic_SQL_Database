@@ -116,11 +116,11 @@ CREATE table PR_Allergies (
 
 /* This creates the Specialization Table 'Doctor' */
 CREATE TABLE Doctor(
- HPKey INT NOT NULL AUTO_INCREMENT,
- Surgeon BOOLEAN,
- Physician BOOLEAN,
- PRIMARY Key (HPKey),
- FOREIGN Key (HPKey) References Health Professionals (HPKey)
+    HPKey INT NOT NULL AUTO_INCREMENT,
+    Surgeon BOOLEAN,
+    Physician BOOLEAN,
+    PRIMARY Key (HPKey),
+    FOREIGN Key (HPKey) References Health Professionals (HPKey)
 );
 
 /* This creates the Specialization Table 'Nurse' */
