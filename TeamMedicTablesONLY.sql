@@ -120,7 +120,7 @@ CREATE TABLE Doctor(
     Surgeon BOOLEAN,
     Physician BOOLEAN,
     PRIMARY Key (HPKey),
-    FOREIGN Key (HPKey) References Health Professionals (HPKey)
+    FOREIGN Key (HPKey) References HealthProfessionals (HPKey)
 );
 
 /* This creates the Specialization Table 'Nurse' */
