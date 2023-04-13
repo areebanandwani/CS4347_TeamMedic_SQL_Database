@@ -13,7 +13,7 @@ CREATE TABLE Patient(
     Pkey INT NOT NULL AUTO_INCREMENT,
     Fname VARCHAR(50),
     Lname VARCHAR(50),
-    DOB VARCHAR (80),
+    DOB Date, /* FORMAT: YYYY-MM-DD */
     Address VARCHAR(80),
     PRIMARY KEY (Pkey)
 );
