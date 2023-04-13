@@ -2,7 +2,7 @@
 /* This creates the STRONG ENTITY Table'Institution' */
 CREATE TABLE Institution(
     IKey INT NOT NULL AUTO_INCREMENT,
-    Address VARCHAR(80),
+    AddressOfInstitution VARCHAR(80),
     VitalCheckUp VARCHAR(80),
     NameOfInstitution VARCHAR(80), 
     PRIMARY Key (IKey)
@@ -14,7 +14,7 @@ CREATE TABLE Patient(
     Fname VARCHAR(50),
     Lname VARCHAR(50),
     DOB Date, /* FORMAT: YYYY-MM-DD */
-    Address VARCHAR(80),
+    AddressOfPatient VARCHAR(80),
     PRIMARY KEY (Pkey)
 );
 
