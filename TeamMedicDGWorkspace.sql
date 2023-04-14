@@ -874,6 +874,231 @@ insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (195,
 insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (196, true, false, true, true);
 insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (197, false, true, true, true);
 insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (198, true, true, false, true);
+
+
+
+/* Next I will populate  Clinic with 200 records.
+
+An assumption would be clinics range from all size and at least one attribute will be true
+I.e Labs: True, UrgentCare: False
+
+NOTE  Clinics primary key will begin at 201 and end with 401
+
+*/
+
+/* This creates the Specialization Table 'Clinic' */
+-- @block
+CREATE TABLE Clinic( 
+    IKey INT NOT NULL AUTO_INCREMENT, 
+    Labs BOOLEAN, 
+    UrgentCare BOOLEAN, 
+    PRIMARY Key (IKey), 
+    FOREIGN Key (IKey) References Institution (Ikey) 
+); 
+
+-- [CLINIC INSERT VALUES]
+
+INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (201,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (202,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (203,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (204,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (205,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (206,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (207,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (208,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (209,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (210,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (211,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (212,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (213,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (214,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (215,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (216,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (217,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (218,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (219,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (220,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (221,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (222,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (223,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (224,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (225,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (226,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (227,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (228,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (229,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (230,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (231,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (232,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (233,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (234,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (235,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (236,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (237,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (238,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (239,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (240,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (241,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (242,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (243,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (244,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (245,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (246,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (247,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (248,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (249,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (250,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (251,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (252,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (253,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (254,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (255,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (256,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (257,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (258,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (259,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (260,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (261,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (262,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (263,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (264,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (265,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (266,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (267,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (268,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (269,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (270,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (271,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (272,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (273,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (274,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (275,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (276,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (277,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (278,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (279,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (280,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (281,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (282,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (283,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (284,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (285,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (286,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (287,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (288,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (289,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (290,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (291,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (292,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (293,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (294,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (295,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (296,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (297,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (298,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (299,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (300,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (301,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (302,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (303,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (304,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (305,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (306,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (307,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (308,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (309,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (310,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (311,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (312,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (313,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (314,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (315,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (316,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (317,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (318,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (319,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (320,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (321,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (322,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (323,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (324,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (325,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (326,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (327,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (328,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (329,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (330,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (331,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (332,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (333,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (334,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (335,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (336,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (337,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (338,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (339,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (340,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (341,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (342,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (343,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (344,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (345,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (346,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (347,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (348,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (349,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (350,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (351,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (352,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (353,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (354,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (355,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (356,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (357,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (358,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (359,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (360,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (361,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (362,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (363,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (364,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (365,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (366,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (367,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (368,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (369,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (370,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (371,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (372,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (373,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (374,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (375,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (376,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (377,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (378,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (379,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (380,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (381,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (382,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (383,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (384,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (385,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (386,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (387,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (388,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (389,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (390,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (391,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (392,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (393,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (394,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (395,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (396,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (397,'0','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (398,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (399,'1','1');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (400,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (401,'1','1');
 insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (199, true, true, true, false);
 insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (200, false, true, true, true);
 
