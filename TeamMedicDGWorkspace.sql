@@ -651,3 +651,229 @@ INSERT INTO Institution(Ikey,NameOfInstitution,AddressOfInstitution,VitalCheckUp
 INSERT INTO Institution(Ikey,NameOfInstitution,AddressOfInstitution,VitalCheckUp) VALUES (610,'KAISER FOUNDATION   - VACAVILLE','4 Florence Pass','Body Temp: 98.2, Heart Rate: 73, Blood Pressure: 125');
 
 
+/*
+Next I will be doing Hospital
+NOTE: Hospital's Primary Key will range from 1-201
+*/
+
+ /* This creates the Specialization Table 'Hospital' */
+ -- @block
+CREATE TABLE Hospital( 
+    IKey INT NOT NULL AUTO_INCREMENT, 
+    InOutPatient BOOLEAN,   
+    ICU BOOLEAN, 
+    Labs BOOLEAN, 
+    EmergencyRoom BOOLEAN, 
+    PRIMARY Key (IKey), 
+    FOREIGN Key (IKey) References Institution (Ikey) 
+); 
+
+/*
+I will be using mockaroo to populate this table with 200 records
+
+An assumption would be hospitals range form all sizes, its possible a hospital will at least have one column will be true
+I.e InOutPatient: false, ICU: false, Labs: false,  EmergencyRoom: true
+*/
+
+-- @block
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (1, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (2, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (3, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (4, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (5, false, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (6, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (7, false, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (8, false, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (9, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (10, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (11, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (12, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (13, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (14, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (15, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (16, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (17, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (18, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (19, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (20, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (21, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (22, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (23, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (24, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (25, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (26, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (27, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (28, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (29, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (30, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (31, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (32, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (33, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (34, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (35, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (36, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (37, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (38, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (39, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (40, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (41, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (42, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (43, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (44, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (45, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (46, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (47, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (48, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (49, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (50, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (51, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (52, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (53, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (54, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (55, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (56, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (57, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (58, true, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (59, true, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (60, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (61, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (62, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (63, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (64, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (65, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (66, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (67, false, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (68, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (69, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (70, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (71, false, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (72, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (73, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (74, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (75, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (76, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (77, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (78, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (79, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (80, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (81, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (82, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (83, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (84, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (85, false, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (86, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (87, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (88, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (89, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (90, true, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (91, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (92, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (93, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (94, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (95, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (96, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (97, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (98, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (99, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (100, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (101, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (102, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (103, false, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (104, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (105, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (106, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (107, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (108, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (109, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (110, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (111, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (112, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (113, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (114, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (115, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (116, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (117, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (118, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (119, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (120, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (121, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (122, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (123, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (124, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (125, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (126, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (127, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (128, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (129, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (130, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (131, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (132, true, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (133, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (134, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (135, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (136, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (137, true, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (138, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (139, false, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (140, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (141, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (142, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (143, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (144, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (145, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (146, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (147, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (148, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (149, true, false, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (150, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (151, false, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (152, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (153, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (154, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (155, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (156, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (157, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (158, true, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (159, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (160, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (161, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (162, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (163, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (164, false, false, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (165, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (166, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (167, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (168, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (169, true, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (170, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (171, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (172, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (173, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (174, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (175, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (176, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (177, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (178, true, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (179, true, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (180, false, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (181, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (182, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (183, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (184, false, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (185, false, false, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (186, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (187, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (188, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (189, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (190, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (191, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (192, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (193, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (194, false, true, false, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (195, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (196, true, false, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (197, false, true, true, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (198, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (199, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (200, false, true, true, true);
+
