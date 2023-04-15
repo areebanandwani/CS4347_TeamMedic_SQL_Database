@@ -172,8 +172,8 @@ CREATE TABLE Clinic(
 /* This creates the Specialization Table 'Pharmacy' */
 CREATE TABLE Pharmacy( 
     IKey INT NOT NULL AUTO_INCREMENT, 
-    PrescribedMedication VARCHAR (80), 
-    OvertheCounterMedication VARCHAR (80), 
+    PrescribedMedication VARCHAR (120), 
+    OvertheCounterMedication VARCHAR (120), 
     PRIMARY Key (IKey), 
     FOREIGN Key (IKey) References Institution (Ikey) 
 ); 
