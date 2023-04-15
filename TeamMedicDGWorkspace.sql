@@ -874,6 +874,8 @@ insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (195,
 insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (196, true, false, true, true);
 insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (197, false, true, true, true);
 insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (198, true, true, false, true);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (199, true, true, true, false);
+insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (200, false, true, true, true);
 
 
 
@@ -898,7 +900,7 @@ CREATE TABLE Clinic(
 
 -- [CLINIC INSERT VALUES]
 
-INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (201,'1','0');
+    INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (201,'1','0');
     INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (202,'0','1');
     INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (203,'1','0');
     INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (204,'1','0');
@@ -1099,6 +1101,5 @@ INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (201,'1','0');
     INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (399,'1','1');
     INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (400,'1','0');
     INSERT INTO Clinic(Ikey,Labs,UrgentCare) VALUES (401,'1','1');
-insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (199, true, true, true, false);
-insert into Hospital (IKey, InOutPatient, ICU, Labs, EmergencyRoom) values (200, false, true, true, true);
+
 
