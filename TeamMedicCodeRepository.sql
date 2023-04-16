@@ -218,7 +218,7 @@ CREATE TABLE Visit(
     FOREIGN Key (PatientKey) References Patient (Pkey),
     FOREIGN Key (InstitutionKey) References Institution (IKey)
 
-    pimrarykey(instititutionkey, patientkey)
+    pimrarykey(InstitutionKey, patientkey)
     */
 );
 
@@ -344,16 +344,16 @@ join services on services.SKey = lookup.ServicesKey;
 /* This creates the M:N table 'Provides' */
 -- @block
 CREATE table Provides (
-    instititutionkey int not NULL,
+    InstitutionKey int not NULL,
     ServicesKey INT not NULl, 
-    PRIMARY Key (instititutionkey, ServicesKey )
+    PRIMARY Key (InstitutionKey, ServicesKey )
 )
 
 
 
 /*These are just one time use to populate an example of a tuple */
 -- @block
-INSERT INTO Provides(instititutionkey, ServicesKey)
+INSERT INTO Provides(InstitutionKey, ServicesKey)
 VALUES(
     '1', 
     '1'      
@@ -369,7 +369,7 @@ FROM provides;
 -- @block
 Select *
 From provides
-join institution on institution.IKey = provides.instititutionkey 
+join institution on institution.IKey = provides.InstitutionKey 
 join services on services.SKey = provides.ServicesKey;
 
 
