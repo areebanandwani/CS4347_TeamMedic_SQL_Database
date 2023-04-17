@@ -191,9 +191,9 @@ CREATE TABLE Consultation(
 CREATE TABLE Prescription( 
     SKey INT NOT NULL AUTO_INCREMENT, 
     RxNumber VARCHAR(20), 
-    NameOfPrescription VARCHAR(50), 
+    NameOfPrescription VARCHAR(150), 
     Quantity INT , 
-    Duration VARCHAR(50), 
+    Duration VARCHAR(150), 
     PRIMARY Key (SKey), 
     FOREIGN Key (SKey) References Services (SKey) 
 ); 
