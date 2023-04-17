@@ -701,9 +701,9 @@ FROM Consultation;
 CREATE TABLE Prescription( 
     SKey INT NOT NULL AUTO_INCREMENT, 
     RxNumber VARCHAR(20), 
-    NameOfPrescription VARCHAR(50), /* changed from name to name of prescription */
+    NameOfPrescription VARCHAR(150), /* changed from name to name of prescription */
     Quantity INT , 
-    Duration VARCHAR(50), 
+    Duration VARCHAR(150), 
     PRIMARY Key (SKey), 
     FOREIGN Key (SKey) References Services (SKey) 
 ); 
