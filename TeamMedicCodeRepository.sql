@@ -92,7 +92,7 @@ CREATE TABLE Services(
     DateOfService Date, /* Changed from date → DateOfService */
     TimeOfService Time, /* changed from time → TimeOfService */
     PRIMARY KEY (SKey)
-)
+);
 
 /* NOTE on SCHEMA DICTIONARY, mistake found, the PK = SKey, not PayKey */
 
